@@ -1,0 +1,63 @@
+service: beit-v1
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: ap-northeast-2
+  timeout: 180
+  apiGateway:
+    shouldStartNameWithService: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3::*:*"
+
+functions:
+  app:
+    handler: handler.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Access-Control-Allow-Headers
+              - Access-Control-Allow-Origin
+              - X-Access-Token
+              - Accept
+              - Origin
+              - DNT
+              - User-Agent
+              - X-Amz-Date
+              - x-amz-date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors:
+            origin: "*"
+            headers:
+              - Content-Type
+              - Access-Control-Allow-Headers
+              - Access-Control-Allow-Origin
+              - X-Access-Token
+              - Accept
+              - Origin
+              - DNT
+              - User-Agent
+              - X-Amz-Date
+              - x-amz-date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+            allowCredentials: false
+
+plugins:
+  - serverless-offline
