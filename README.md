@@ -1,6 +1,6 @@
 # 마켓컬리 나만의 장바구니
 
-API
+API(NodeJS)
 
 ## System Architecture
 - serverless cli 이용한 배포
