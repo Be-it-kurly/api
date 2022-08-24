@@ -7,11 +7,11 @@ API
    ```bash
    sls deploy
    ```
-![Image](https://i.ibb.co/B4X5CzS/deploy.png)
+    ![Image](https://i.ibb.co/B4X5CzS/deploy.png)
 
 
 - aws cloud micro architecture
-![Image](https://i.ibb.co/kmsb8tZ/architecture.png)
+    ![Image](https://i.ibb.co/kmsb8tZ/architecture.png)
 
 ## Get Started
 
