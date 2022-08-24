@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
       userName: v.userName.S,
       age: parseInt(v.age.N, 10),
       totalServiceCount: parseInt(v.totalServiceCount.N, 10),
+      keywords: v.keywords.S,
     }));
 
     res.status(200).json({
